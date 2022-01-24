@@ -1,0 +1,38 @@
+<mat-progress-bar mode="indeterminate" *ngIf="isShow"></mat-progress-bar>
+<mat-card class="card-container" [class.mat-elevation-z8]="isActive">
+  <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+  <mat-card-header class="card-header">
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-subtitle style="font-weight:bold;">Login Form</mat-card-subtitle>
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-form-field>
+    <input type="email"
+    name="email"
+    ngModel
+    matInput
+    placeholder="E-mail"
+    required
+    email
+    #name="ngModel"
+    >
+    <mat-error *ngIf="name.invalid">Please Enter Valid Email</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input type="password"
+    name="password"
+   ngModel
+    matInput
+    placeholder="Password"
+    required
+    #password="ngModel"
+
+    >
+    <mat-error *ngIf="password.invalid">Please Enter Valid password</mat-error>
+  </mat-form-field>
+  <mat-card-actions>
+    <button mat-raised-button type="submit">Login</button>
+  </mat-card-actions>
+</form>
+</mat-card>

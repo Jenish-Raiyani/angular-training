@@ -1,0 +1,37 @@
+<mat-progress-bar mode="indeterminate" *ngIf="isShow"></mat-progress-bar>
+<mat-card class="card-container" [class.mat-elevation-z8]="isActive">
+  <form (submit)="onSave(studentForm)" #studentForm="ngForm">
+  <mat-card-header class="card-header">
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-subtitle>Registration</mat-card-subtitle>
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+  <mat-form-field>
+    <input type="text"
+    name="name"
+    [ngModel]="std?.name"
+    matInput
+    placeholder="Enter Name"
+    required
+    #name="ngModel"
+    >
+    <mat-error *ngIf="name.invalid">Please Enter name</mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input type="text"
+    name="branch"
+   [ngModel]="std?.branch"
+    matInput
+    placeholder="Enter Branch"
+    required
+    #branch="ngModel"
+
+    >
+    <mat-error *ngIf="branch.invalid">Please Enter Branch</mat-error>
+  </mat-form-field>
+  <mat-card-actions>
+    <button mat-raised-button type="submit">Save</button>
+  </mat-card-actions>
+</form>
+</mat-card>

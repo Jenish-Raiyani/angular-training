@@ -1,0 +1,32 @@
+.main-container{
+  width: 70%;
+  margin: auto;
+}
+
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
+h1{
+  color: black;
+}
+
+a{
+  text-decoration: none;
+  color:white;
+
+}
+.header-items{
+  width:50%;
+}
+ul{
+  list-style:none;
+  display:flex;
+
+}
+
+li{
+  padding:0px 10px;
+}
